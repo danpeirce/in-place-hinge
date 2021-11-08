@@ -175,7 +175,7 @@ module applyExtraAngle(positions, rotations, cornerHeight, centerHeight, hingeLe
     }
   }
 }
-/* 
+// /* 
 // Examples:
 
 // For each of these examples we position the cubes where we are placing the hinges separated by tolerance = 0.5.
@@ -186,18 +186,27 @@ module applyExtraAngle(positions, rotations, cornerHeight, centerHeight, hingeLe
 difference() {
   union() {
     translate([0,0.5,0])
-    cube([60,60,7]);
-    translate([0,-60.5,0])
-    cube([60,60,7]);
+    cube([60,30,7]);
+    translate([0,-30.5,0])
+    cube([60,30,7]);
   }
   hingeCorner(7/2, 7/2, 60, 6, true, true, 0.5);
   negativeExtraAngle([0,0,0], [0,0,0], 7, 7/2, 60, 6, 0.5, true, 90);
   hingeCorner(7/2, 7/2, 60, 6, false, true, 0.5);
   negativeExtraAngle([0,0,0], [0,0,0], 7, 7/2, 60, 6, 0.5, false, 90);
+  // new danp to reduce material and print time
+  translate([-0.1, 7, 2]) // thinner part
+  cube([60+0.2, 5, 7]);
+  translate([-0.1, -30.5-7, 2])
+  cube([60+0.2, 30, 7]);
+  translate([5, 7*2, -0.1])  // slots
+  cube([60-2*5, 5, 7]);
+  translate([5, -0.5-7*2, -0.1])
+  cube([60-2*5, 5, 7]);
 }
 hingeCorner(7/2, 7/2, 60, 6, true, false, 0.5);
 hingeCorner(7/2, 7/2, 60, 6, false, false, 0.5);
-
+/*
 // Same as before but with apply*() functions.
 applyHinges([[0,0,0]], [0], 7/2, 7/2, 60, 6, 0.5)
 applyExtraAngle([[0,0,0]], [0], 7, 7/2, 60, 6, 0.5, 90)
