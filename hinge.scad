@@ -189,6 +189,8 @@ difference() {
     cube([60,30,7]);
     translate([0,-30.5,0])
     cube([60,30,7]);
+    translate([0,30.6,0]) rotate([45,0,0])
+    cube([60,6,4]);
   }
   hingeCorner(7/2, 7/2, 60, 6, true, true, 0.5);
   negativeExtraAngle([0,0,0], [0,0,0], 7, 7/2, 60, 6, 0.5, true, 90);
@@ -196,12 +198,12 @@ difference() {
   negativeExtraAngle([0,0,0], [0,0,0], 7, 7/2, 60, 6, 0.5, false, 90);
   // new danp to reduce material and print time
   translate([-0.1, 7, 2]) // thinner part
-  cube([60+0.2, 5, 7]);
+  cube([60+0.2, 30, 7]);
   translate([-0.1, -30.5-7, 2])
   cube([60+0.2, 30, 7]);
   translate([5, 7*2, -0.1])  // slots
   cube([60-2*5, 5, 7]);
-  translate([5, -0.5-7*2, -0.1])
+  translate([5, -5.5-7*2, -0.1])
   cube([60-2*5, 5, 7]);
 }
 hingeCorner(7/2, 7/2, 60, 6, true, false, 0.5);
