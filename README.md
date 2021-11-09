@@ -1,7 +1,7 @@
 # Print Hinge in Place
 
-This is a fork of an existing project.The main branch was left as the original. The main-danp branch 
-contains my changes.
+This is a fork of an existing project.The master branch was left as the original except for the addition 
+of this readme file. The main-danp branch contains my changes.
 
 
 ## Testing Examples
